@@ -104,7 +104,7 @@ public class Case04 {
 	@Order(4)
 	@DisplayName("テスト04 「よくある質問」リンクからよくある質問画面を別タブに開く")
 	void test04() {
-		//ヘルプ画面に遷移
+		// 機能メニューの選択・ヘルプリンク押下
 		WebElement functionMenuElement = webDriver.findElement(By.linkText("機能"));
 		functionMenuElement.click();
 		WebElement helpLinkClickElement = webDriver.findElement(By.linkText("ヘルプ"));
