@@ -43,6 +43,10 @@ public class Case02 {
 
 		//Titleの取得とアサーション
 		assertEquals("ログイン | LMS", webDriver.getTitle());
+
+		// 開いたページのキャプチャを取得・evidenceフォルダに保存
+		getEvidence(new Object() {
+		});
 	}
 
 	@Test
@@ -65,6 +69,13 @@ public class Case02 {
 		WebElement loginButtonElement = webDriver.findElement(By.cssSelector("input[type='submit']"));
 		assertEquals("ログイン", loginButtonElement.getAttribute("value"), "CSSセレクタで狙った要素のテキストが正しいこと");
 		loginButtonElement.click();
+
+		//Titleの取得とアサーション
+		assertEquals("ログイン | LMS", webDriver.getTitle(), "タイトルが正しいこと");
+
+		//エラーメッセージの取得とアサーション
+		WebElement loginErrorElement = webDriver.findElement(By.cssSelector(".help-inline.error"));
+		assertEquals("* ログインに失敗しました。", loginErrorElement.getText().trim(), "エラーメッセージが正しいこと");
 
 		// 開いたページのキャプチャを取得・evidenceフォルダに保存
 		getEvidence(new Object() {
