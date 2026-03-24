@@ -75,7 +75,7 @@ public class Case02 {
 
 		//エラーメッセージの取得とアサーション
 		WebElement loginErrorElement = webDriver.findElement(By.cssSelector(".help-inline.error"));
-		assertEquals("* ログインに失敗しました。", loginErrorElement.getText().trim(), "エラーメッセージが正しいこと");
+		assertEquals("* ログインに失敗しました。", loginErrorElement.getText(), "エラーメッセージが正しいこと");
 
 		// 開いたページのキャプチャを取得・evidenceフォルダに保存
 		getEvidence(new Object() {
